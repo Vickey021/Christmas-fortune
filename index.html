@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>thelaughterloop-Christmas Fortune Hub</title>
+  <style>
+   
+
+    body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: linear-gradient(120deg, #ffcccb, #ffffff);
+  color: #333;
+  animation: fadeIn 1.5s ease-in-out;
+  overflow-y: scroll; /* Enable scrolling */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures body takes full height of viewport */
+}
+
+footer {
+  margin-top: auto; /* Push footer to the bottom of the page */
+}
+
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Login Page Styles */
+    #loginPage {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: url('https://cdn.pixabay.com/photo/2021/11/11/06/46/holiday-6802876_1280.jpg') no-repeat center/cover;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+    #loginPage{
+      color: black;
+    }
+    .channel{
+      color: purple;
+    font-size: 2rem;
+    font-style: oblique;
+    margin-top: -13px;
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      color: #ff4c4c;
+      animation: bounce 1.5s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 40px;
+      font-family: sans-serif;
+      color: #333;
+    }
+
+    input {
+      padding: 12px 20px;
+      font-size: 18px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border: 2px solid #ba0000;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    input:focus {
+      border-color: #ff4c4c;
+      box-shadow: 0 0 10px rgba(255, 76, 76, 0.7);
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      background-color: #ba0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #ff4c4c;
+      transform: scale(1.1);
+    }
+
+    /* Main Page Styles */
+    #mainPage {
+      display: none;
+      padding: 30px;
+    }
+    #loginPage img{
+      max-width: 148px;
+    border-radius: 8rem;
+    height: 162px;
+    }
+
+    #visitorCountBanner {
+      background-color: #ffcc00;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    #welcomeMessage {
+      font-size: 28px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #ba0000;
+    }
+
+    /* Ornament, Gift, Santa styles */
+    .ornaments {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .ornament, .gift, .santa {
+      width: 120px;
+      height: 120px;
+      background-color: #ffcc00;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    }
+
+    .ornament:hover, .gift:hover, .santa:hover {
+      transform: scale(1.1);
+      animation: pulse 1s infinite;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .ornament {
+      background: url('https://cdn.pixabay.com/photo/2021/12/05/12/29/christmas-tree-6847584_640.jpg') no-repeat center/cover;
+    }
+
+    .gift {
+      background: url('https://cdn.pixabay.com/photo/2015/09/29/18/59/isolated-964342_640.png') no-repeat center/cover;
+    }
+
+    .santa {
+      background: url('https://cdn.pixabay.com/photo/2015/10/17/20/36/christmas-993304_640.jpg') no-repeat center/cover;
+    }
+
+    .fortune {
+      margin-top: 30px;
+      padding: 20px;
+      background: crimson;
+      border: 1px solid #ffcc99;
+      border-radius: 10px;
+      display: inline-block;
+      font-size: 18px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: opacity 0.3s ease;
+      color: white;
+    }
+
+    /* Footer Styles */
+    footer {
+      width: 100%;
+      padding: 10px 0;
+      background-color: #ba0000;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      font-family: sans-serif;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Like & Subscribe Section */
+    .like-subscribe {
+      margin-top: 20px;
+      font-size: 18px;
+      color: black;
+      font-weight: bold;
+      font-family:  sans-serif;
+      position: relative;
+      top: 10px;
+    }
+
+    /* Visitor Alert and Message Section */
+    .visitor-alert {
+      background-color: #ffcc00;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 18px;
+      border-radius: 10px;
+      color: #333;
+      font-weight: bold;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .ornament, .gift, .santa {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ornament, .gift, .santa {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div id="loginPage">
+    <img 
+    src="img/IMG_20241216_235141.jpg" 
+    alt="Christmas Theme Banner" 
+    style="width: 100%; max-height: 300px; object-fit: cover; margin-bottom: 20px;"
+  >
+  <p class="channel">The Laughter Loop</p>
+    <h1>Welcome to Christmas Fortune Hub!</h1>
+    <h2>Only if you’ve subscribed to <b>'The Laughter Loop'</b>, you can enter!</h2>
+    <p>Enter the channel name below to proceed:</p>
+    <input type="text" id="channelName" placeholder="Enter channel name here">
+    <button onclick="validateChannel()">Submit</button>
+  </div>
+
+  <!-- Main Page -->
+  <div id="mainPage">
+   
+    <div id="visitorCountBanner"></div>
+    
+    <div class="like-subscribe">
+      <p><strong>Like and Subscribe to 'The Laughter Loop' for more funny updates!</strong></p>
+    </div>
+    <h1>Welcome, Subscriber!</h1>
+    <p>Click on the ornaments, gifts, or Santa to get your fortune!</p>
+    <div id="welcomeMessage"></div>
+    <div class="ornaments">
+      <div class="ornament" onclick="revealFortune()"></div>
+      <div class="gift" onclick="revealFortune()"></div>
+      <div class="santa" onclick="revealFortune()"></div>
+    </div>
+    <div id="fortuneMessage" class="fortune" style="display: none;"></div>
+    <div class="visitor-alert">
+      <p>If you like this website? DM me on <a href="#" class="instagram-link" id="instagramLink">Instagram</a> for a similar website of yours!</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Created by <b>'The Laughter Loop'</b></p> 
+    <p>
+      <a href="#" class="youtube-link" id="youtubeFooterLink">YouTube</a>|
+      <a href="#" target="_blank">Facebook</a> |
+      <a href="#" class="instagram-link" id="instagramFooterLink">Instagram</a> |
+      
+      <a href="#" target="_blank">Twitter</a>
+    </p>
+  </footer>
+
+  <script>
+    
+     // Script for handling login
+
+     function validateChannel() {
+
+const channelName = document.getElementById("channelName").value.trim();
+
+const correctChannelName = "The Laughter Loop";
+
+
+
+// Check if there's a stored channel name in localStorage
+
+if (localStorage.getItem("attemptedChannelName")) {
+
+  const storedChannelName = localStorage.getItem("attemptedChannelName");
+
+  localStorage.removeItem("attemptedChannelName"); // Clear the stored value
+
+
+
+  if (storedChannelName.toLowerCase() === correctChannelName.toLowerCase()) {
+
+    // Increment visitor count after the correct channel name is entered
+
+    let visitorCount = parseInt(localStorage.getItem("visitorCount")) || 0;
+
+    visitorCount++;
+
+    localStorage.setItem("visitorCount", visitorCount);
+
+
+
+    // Hide login page and show main page
+
+    document.getElementById("loginPage").style.display = "none";
+
+    document.getElementById("mainPage").style.display = "block";
+
+
+
+    // Display visitor count on the main page
+
+    document.getElementById("visitorCountBanner").textContent = `🎉 You are visitor #${visitorCount}! 🎉`;
+
+  } else {
+
+    alert("Incorrect channel name. Please try again.");
+
+  }
+
+} else {
+
+  // First attempt: show alert and store the attempted channel name
+
+  alert("Not subscribed or incorrect channel name.");
+
+  localStorage.setItem("attemptedChannelName", channelName);
+
+  location.reload();
+
+}
+
+}
+
+    // Script for revealing fortunes
+    function revealFortune() {
+      const fortunes = [
+        "Today’s the day you spread laughter!",
+        "Your holiday spirit is contagious!",
+        "Santa’s bringing you a bucket of fun!",
+        "You’ll make someone’s day brighter today!",
+        "Joy and laughter are in your stars!",
+        "You will soon meet your loveones",
+        "This year you will do big work"
+      ];
+      const randomIndex = Math.floor(Math.random() * fortunes.length);
+      const fortuneMessage = document.getElementById("fortuneMessage");
+      fortuneMessage.style.display = "block";
+      fortuneMessage.textContent = fortunes[randomIndex];
+    }
+
+      // Function to check if Instagram app is installed on click
+  document.getElementById('instagramLink').addEventListener('click', function(e) {
+    e.preventDefault();  // Prevent the default behavior of opening the link
+    
+    // Deep link to open Instagram app
+    var appUrl = "instagram://user?username=thelaughterloop"; // Replace 'thelaughterloop' with your Instagram username
+    var webUrl = "https://www.instagram.com/thelaughterloop"; // Fallback to the web URL if app isn't installed
+    
+    // Try to open Instagram app using deep link
+    window.location = appUrl;
+
+    // If Instagram app isn't installed, fallback to website after a short delay
+    setTimeout(function() {
+      window.location = webUrl;
+    }, 200);  // Delay the fallback to allow deep link attempt
+  });
+
+
+   // Instagram link handler for footer
+   document.getElementById('instagramFooterLink').addEventListener('click', function(e) {
+    e.preventDefault();  // Prevent default behavior
+    var appUrl = "instagram://user?username=thelaughterloop"; // Deep link to open Instagram app
+    var webUrl = "https://www.instagram.com/thelaughterloop"; // Fallback to website if app is not installed
+    
+    window.location = appUrl;
+
+    // Fallback to web URL after short delay if app isn't installed
+    setTimeout(function() {
+      window.location = webUrl;
+    }, 200);  // Delay to allow app open attempt
+  });
+
+  // YouTube link handler for footer
+  document.getElementById('youtubeFooterLink').addEventListener('click', function(e) {
+    e.preventDefault();  // Prevent default behavior
+    var appUrl = "vnd.youtube://www.youtube.com/@thelaughloop-01"; // Deep link to open YouTube app
+    var webUrl = "https://www.youtube.com/@thelaughloop-01"; // Fallback to web URL if app is not installed
+    
+    window.location = appUrl;
+
+    // Fallback to web URL after short delay if app isn't installed
+    setTimeout(function() {
+      window.location = webUrl;
+    }, 200);  // Delay to allow app open attempt
+  });
+  </script>
+
+</body>
+</html>
